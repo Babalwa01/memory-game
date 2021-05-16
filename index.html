@@ -10,19 +10,20 @@
 </head>
 <body>
     <header>
-        <section>
+        <section id="header-section">
             <h1>MEMORY GAME</h1>
-            <p>Click a tile then match it</p>
+            <p class="header-p">Choose board size:</p>
+            <!-- <p>Click a tile then match it</p> -->
         </section>
     </header>
     <main>
         <section id="main-container" class="w3-container">
             <div id="board-sizes-div">
-                <h4>Choose board size:</h4>
-                <button id="four-by-three-btn" class="board-size-btn">4 X 3 Board</button>
-                <button id="four-by-two-btn" class="board-size-btn">4 X 2 Board</button>
+                <!-- <h4>Choose board size:</h4> -->
+                <button id="two-by-two-btn" class="board-size-btn">2 X 2 Board</button>
                 <button id="three-by-two-btn" class="board-size-btn">3 X 2 Board</button>
-                <button id="two-by-two-btn" class="board-size-btn">2 X 2 Board</button> 
+                <button id="four-by-two-btn" class="board-size-btn">4 X 2 Board</button>
+                <button id="four-by-three-btn" class="board-size-btn">4 X 3 Board</button>
             </div>
             <h3><span id="timer-span">Timer: <span id="timer">00:00:00</span></span></h3>
             <div id="board" class="four-by-three-board">
