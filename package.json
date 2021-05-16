@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sass": "node-sass -w SCSS/ -o CSS/ --recursive",
     "test": "jasmine"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/Babalwa01/memory-game#readme",
   "devDependencies": {
     "jasmine": "^3.7.0"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.0"
   }
 }

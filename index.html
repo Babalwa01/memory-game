@@ -4,9 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Memory Game</title>
 </head>
 <body>
-    
+    <header>
+        <section>
+            <h1>MEMORY GAME</h1>
+            <p>Click a tile then match it</p>
+        </section>
+    </header>
+    <main>
+        <section id="main-container" class="w3-container">
+            <h3><span id="timer-span">Timer: <span id="timer">00:00:00</span></span></h3>
+            <div id="board" class="four-by-three-board">
+                <div class="cell css-div1" data-cell="css_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/css.png" alt="css_icon">
+                </div>
+                <div class="cell js-div1" data-cell="javascript_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/javascript.png" alt="javascript_icon">
+                </div>
+                <div class="cell css-div2" data-cell="css_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/css.png" alt="css_icon">
+                </div>
+                <div class="cell linux-div1" data-cell="linux_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/linux.png" alt="linux_icon">
+                </div>
+                <div class="cell github-div1" data-cell="github_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/github.png" alt="github_icon">
+                </div>
+                <div class="cell react-div1" data-cell="react_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/react.png" alt="react_icon">
+                </div>
+                <div class="cell linux-div2" data-cell="linux_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/linux.png" alt="linux_icon">
+                </div>
+                <div class="cell github-div2" data-cell="github_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/github.png" alt="github_icon">
+                </div>
+                <div class="cell html-div1" data-cell="html_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/html.png" alt="html_icon">
+                </div>
+                <div class="cell js-div2" data-cell="javascript_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/javascript.png" alt="javascript_icon">
+                </div>
+                <div class="cell react-div2" data-cell="react_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/react.png" alt="react_icon">
+                </div>
+                <div class="cell html-div2" data-cell="html_cell">
+                    <div class="front-card"></div>
+                    <img class="back-card" src="images/html.png" alt="html_icon">
+                </div>
+            </div>
+            <div id="board-sizes-div">
+                <h4>Choose board size:</h4>
+                <button id="four-by-three-btn" class="board-size-btn">4 X 3 Board</button>
+                <button id="four-by-two-btn" class="board-size-btn">4 X 2 Board</button>
+                <button id="three-by-two-btn" class="board-size-btn">3 X 2 Board</button>
+                <button id="two-by-two-btn" class="board-size-btn">2 X 2 Board</button> 
+            </div>
+        </section>
+        <section class="message-container" id="message-container">
+            <section id="results-message-text">Well Done !<br>
+                <span id="card-flips">Moves: <span id="flip-count"></span></span>
+            </section>
+            <button id="play-button">Play again</button>
+        </section>
+    </main>
 </body>
 </html>
