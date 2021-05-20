@@ -50,7 +50,8 @@ body {
     grid-column: 2/3;
     grid-row: 1/2;
     background-color: #cd8f32;
-    color: #2b2929; }
+    color: #2b2929;
+    visibility: hidden; }
   #main-container .ease-timer {
     animation: timeranim 7s infinite; }
 
@@ -186,7 +187,6 @@ img {
     #main-container #board {
       width: 100%;
       grid-column: 2/5;
-      display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: repeat(3, auto); }
       #main-container #board .cell {
