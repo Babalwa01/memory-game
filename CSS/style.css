@@ -2,14 +2,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
   font-family: cursive, Helvetica, sans-serif; }
+
+button {
+  border: none;
+  cursor: pointer; }
 
 body {
   background: url(../images/background.png) no-repeat center fixed;
   background-size: cover;
   line-height: 1.6;
   overflow-x: hidden;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,18 +45,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr;
-  grid-template-rows: repeat(3, auto);
-  text-align: center; }
+  align-items: center; }
   #main-container #timer-h {
     margin-top: 1rem;
-    grid-column: 2/3;
-    grid-row: 1/2;
     background-color: #cd8f32;
     color: #2b2929;
-    visibility: hidden; }
+    visibility: hidden;
+    width: 100vw;
+    text-align: center; }
   #main-container .ease-timer {
     animation: timeranim 7s infinite; }
 
@@ -64,10 +65,9 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 7vh;
-    grid-column: 2/3;
-    grid-row: 2/3; }
+    width: 70%; }
     #main-container #board-sizes-div button {
-      width: 25vw;
+      width: 100%;
       height: 3rem;
       font-size: 25px;
       margin-bottom: 1rem;
@@ -76,18 +76,12 @@ body {
       border: 2px solid black;
       color: rgba(255, 255, 255, 0.932);
       border-radius: 5px; }
-  #main-container #board {
-    grid-column: 2/3;
-    grid-row: 2/3;
+  #main-container .board {
     margin-top: 7vh;
     display: none;
-    grid-template-columns: repeat(4, 25%);
-    grid-auto-rows: minmax(4.5rem, auto);
-    grid-column-gap: 0.2em;
-    grid-row-gap: 0.4em;
     perspective: 1000px;
-    width: 100vw; }
-    #main-container #board .cell {
+    padding-left: 2.5%; }
+    #main-container .board .cell {
       cursor: pointer;
       transform: scale(1);
       transform-style: preserve-3d;
@@ -97,22 +91,55 @@ body {
       align-items: center;
       transform-style: preserve-3d;
       transition: transform .5s;
-      width: 8rem;
-      height: 8rem;
       border-radius: 2px;
       border: 1px solid black;
       background: rgba(119, 189, 28, 0.6);
       box-shadow: 0 0 0.8rem 0 #646060; }
-      #main-container #board .cell .front-card, #main-container #board .cell .back-card {
+      #main-container .board .cell .front-card, #main-container .board .cell .back-card {
         backface-visibility: hidden; }
-      #main-container #board .cell .back-card {
+      #main-container .board .cell .back-card {
         transform: rotateY(180deg); }
-    #main-container #board .cell:active {
+    #main-container .board .cell:active {
       transform: scale(0.97);
       transition: transform .2s; }
-    #main-container #board .cell.flip {
+    #main-container .board .cell.flip {
       transform: rotateY(180deg); }
-  #main-container #board > div {
+  #main-container .two-by-two-board {
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: minmax(4.5rem, auto);
+    grid-row-gap: 0.5em;
+    width: 90vw; }
+    #main-container .two-by-two-board .cell {
+      width: 94%;
+      height: 9rem; }
+  #main-container .three-by-two-board {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(4.5rem, auto);
+    grid-row-gap: 0.5em;
+    width: 90vw; }
+    #main-container .three-by-two-board .cell {
+      width: 94%;
+      height: 6.5rem; }
+  #main-container .four-by-two-board {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(4.5rem, auto);
+    grid-row-gap: 0.5em;
+    width: 90vw; }
+    #main-container .four-by-two-board .cell {
+      width: 94%;
+      height: 4.7rem; }
+  #main-container .four-by-three-board {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(4.5rem, auto);
+    grid-row-gap: 0.4em;
+    width: 100vw;
+    padding: 1rem;
+    margin-right: 44%; }
+    #main-container .four-by-three-board .cell {
+      width: 20vw;
+      height: 4.7rem;
+      margin-right: 0.3rem; }
+  #main-container .board > div {
     background-color: rgba(117, 11, 20, 0.6); }
 
 img {
@@ -132,12 +159,16 @@ img {
   align-items: center;
   color: white;
   font-size: 5rem;
-  flex-direction: column; }
+  flex-direction: column;
+  padding-top: 6rem;
+  width: 100vw; }
   #message-container #results-message-text {
-    text-align: center; }
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold; }
 
 .message-container button {
-  font-size: 3rem;
+  font-size: 1.5rem;
   background-color: white;
   border: 2px solid darkgreen;
   padding: .25em .5em;
@@ -151,46 +182,77 @@ img {
 .message-container.show {
   display: flex; }
 
-@media screen and (min-width: 118px) and (max-width: 414px) {
-  body {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    body #header-id {
-      width: 100%;
-      text-align: center; }
-      body #header-id #header-section {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        padding-left: 10%;
-        padding-right: 10%; }
-  #main-container {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 0.5fr 1fr 2fr 1fr 0.5fr; }
-    #main-container #timer-h {
-      margin-top: 6vh;
-      grid-column: 2/5;
-      width: 100%; }
-    #main-container #board-sizes-div {
-      grid-column: 2/5;
-      margin-top: 4.5vh; }
-      #main-container #board-sizes-div button {
-        width: 100%; }
-    #main-container #board {
-      width: 100%;
-      grid-column: 2/5;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: repeat(3, auto); }
-      #main-container #board .cell {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 2px;
-        margin-left: 0; } }
+/* Large screens */
+@media screen and (min-width: 768px) and (max-width: 1170px) {
+  #header-section h1 {
+    font-size: 2.5rem; }
+  #header-section .header-p {
+    font-size: 1.5rem;
+    animation: myanim 7s infinite; }
+  @keyframes myanim {
+    70% {
+      font-size: 1.2rem; } }
+  #main-container #timer-h {
+    font-size: 22px; }
+  #main-container #board-sizes-div {
+    width: 20rem; }
+    #main-container #board-sizes-div .board-size-btn {
+      height: 3.5rem;
+      margin-bottom: 1.5rem; }
+  #main-container .two-by-two-board {
+    width: 60vw;
+    grid-row-gap: 1em; }
+    #main-container .two-by-two-board .cell {
+      height: 19vh; }
+  #main-container .three-by-two-board {
+    width: 65vw;
+    grid-row-gap: 1em; }
+    #main-container .three-by-two-board .cell {
+      height: 10rem; }
+  #main-container .four-by-two-board {
+    grid-row-gap: 1em; }
+    #main-container .four-by-two-board .cell {
+      height: 10rem; }
+  #main-container .four-by-three-board {
+    grid-row-gap: 1em; }
+    #main-container .four-by-three-board .cell {
+      height: 10rem;
+      margin-left: 0.2rem;
+      margin-right: 0.2rem; }
+  #message-container {
+    padding-top: 3rem;
+    width: 100vw; }
+    #message-container #results-message-text {
+      font-size: 30px; }
+  .message-container button {
+    font-size: 2rem; } }
+
+@media screen and (min-width: 1171px) {
+  #main-container #board-sizes-div {
+    width: 21rem; }
+    #main-container #board-sizes-div .board-size-btn {
+      height: 3rem; }
+  #main-container .two-by-two-board {
+    width: 25vw;
+    grid-row-gap: 0.7em; }
+    #main-container .two-by-two-board .cell {
+      height: 20vh; }
+  #main-container .three-by-two-board {
+    width: 45vw;
+    grid-row-gap: 1em; }
+    #main-container .three-by-two-board .cell {
+      height: 10rem; }
+  #main-container .four-by-two-board {
+    width: 45vw;
+    grid-row-gap: 1em; }
+    #main-container .four-by-two-board .cell {
+      height: 8.5rem; }
+  #main-container .four-by-three-board {
+    margin-top: 2vh;
+    margin-left: 30rem;
+    width: 100vw; }
+    #main-container .four-by-three-board .cell {
+      height: 8rem;
+      width: 8rem; }
+  #message-container {
+    width: 100vw; } }
