@@ -8,5 +8,4 @@
 - Card flip functionality
 - Card content shuffle
 - Moves count
-
-Responsiveness is still in progress. Game created only for desktop and laptop screen sizes thus far.
+- Responsiveness
