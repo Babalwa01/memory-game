@@ -185,7 +185,6 @@ function showFourByTwoBoard() {
     fourByTwoClicked = true;
     board.style.gridTemplateColumns = "repeat(4, 30%)";
     boardSizesDiv.style.marginLeft = "9rem";
-    messageContainer.style.left = "2rem";
     headerP.innerHTML = "Click a tile then match it";
     board.style.gridRowGap = "1.4em";
     board.style.paddingLeft = "28%";
